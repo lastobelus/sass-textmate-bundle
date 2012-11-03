@@ -18,9 +18,13 @@ choices += parsed_choices if parsed_choices
 choices += ['--']
 
 plist_choices = TextmateCompletionsPlist.new( "#{ENV['TM_BUNDLE_PATH']}/Preferences/#{preference}.tmPreferences" ).to_ary
+
+
 choices += plist_choices if plist_choices
 
-print TextmateCodeCompletion.new(choices,STDIN.read, :scope =&gt; :css).to_snippet
+TextMate::UI.tool_tip('&lt;div style="background:white; -webkit-border-radius: 15px; padding:1em; margin-top:100px"&gt;&lt;pre&gt;'+choices.inspect+'&lt;/pre&gt;&lt;/div&gt;', {:transparent =&gt; true, :format =&gt; :html})
+
+# print TextmateCodeCompletion.new(choices,STDIN.read, :scope =&gt; :css).to_snippet
 </string>
 	<key>fallbackInput</key>
 	<string>line</string>
