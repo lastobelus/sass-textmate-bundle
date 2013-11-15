@@ -1,38 +1,39 @@
-### Textmate with alternative SASS Syntax
+# Sass for TextMate/Sublime Text 2
 
-For those of you how prefer the alternative Sass Synatx:
+## What's this thingie?
 
-    .pagination
-      margin: 10px 0 10px 0
-      text-align: center
-      font-size: 14px
-      span
-        color: #000
-      span.disabled
-        display: none
-      a 
-        margin: 0 1px 0 1px
+This add-on adds syntax highlighting and tab/code completion for Sass and SCSS files. It features [Zen Coding](http://code.google.com/p/zen-coding/) shortcuts for many CSS properties, making you look like some kind of stylesheet wizard to everyone around you. You've got to like that.
 
-### Installation
+## TextMate Installation
 
-#### With git
+### With git
 
     mkdir -p ~/Library/Application\ Support/TextMate/Bundles/
     cd ~/Library/Application\ Support/TextMate/Bundles/
-    git clone https://github.com/chrisledet/sass-bundle.git Sass.tmbundle
+    git clone https://github.com/nathos/sass-textmate-bundle.git Sass.tmbundle
     osascript -e 'tell app "TextMate" to reload bundles'
 
-#### Without git
+### Without git
     mkdir -p ~/Library/Application\ Support/TextMate/Bundles
     cd ~/Library/Application\ Support/TextMate/Bundles
-    wget https://github.com/downloads/chrisledet/sass-bundle/Sass.tmbundle.tar.gz
-    tar zxvf Sass.tmbundle.tar.gz
-    rm Sass.tmbundle.tar.gz
+    mkdir sass-textmate-bundle.tmbundle && curl -L https://github.com/nathos/sass-textmate-bundle/tarball/master | tar xz --strip 1 -C sass-textmate-bundle.tmbundle
     osascript -e 'tell app "TextMate" to reload bundles'
 
-### About
-I couldn't find a decent bundle that's updated regularly so I forked this and decided to 
-maintain one for myself. Others should feel free to submit patches or whatever.
+## Sublime Text 2 Installation
 
-### Credit
-This bundle was not created by me. It is a fork of <https://github.com/seaofclouds/sass-textmate-bundle>.
+### With Sublime Package Control
+
+I recommend using the excellent [Sublime Package Control](http://wbond.net/sublime_packages/package_control) to install Sublime Text 2 packages.
+
+Once you have Package Control installed, activate your Command Palette and choose ```Package Control: Install Package```.
+
+Then, search for **"Sass"** and press Enter. In mere moments you'll be up and running with full syntax highlighting, tab completion and more. Huzzah!
+
+### Putting HAML in its place
+
+You may find that when you open files with the `.sass` extension, Sublime Text 2 initially interprets the syntax as HAML. To permanently fix this, open `Packages/Rails/Ruby Haml.tmLanguage` and delete the line `<string>sass</string>`.
+
+## About & Credit
+This was originally a fork of <https://github.com/seaofclouds/sass-textmate-bundle>, and includes the best contributions of people [throughout the network](https://github.com/nathos/sass-textmate-bundle/network).
+
+Features include imprpoved syntax highlighting, [Zen Coding](http://code.google.com/p/zen-coding/)-style property autocompletion, and more.
